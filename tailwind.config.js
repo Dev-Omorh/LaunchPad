@@ -19,7 +19,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],           // Primary UI text
+        sans: ['Inter', 'sans-serif'],   // Primary UI text
         mono: ['Fira Code', 'JetBrains Mono', 'monospace'], // Code execution / snippets
       }
     },
