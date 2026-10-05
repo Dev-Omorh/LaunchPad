@@ -1,4 +1,4 @@
-function ProgressBar({status, feedback,}) {
+function FeedbackPanel({status, feedback,}) {
     if (!feedback) return null;
 
     const isSuccess = status === "pass" || status === "correct"; 
@@ -19,4 +19,4 @@ function ProgressBar({status, feedback,}) {
     );
 }
 
-export default ProgressBar;
+export default FeedbackPanel;
