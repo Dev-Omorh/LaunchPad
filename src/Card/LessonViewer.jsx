@@ -1,13 +1,23 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Badge from "../UI/Badge"
 import Button from "../UI/Button";
 import FeedbackPanel from "../UI/FeedbackPanel";
 
-function LessonViewer() {
+function LessonViewer({subject, concept}) {
     const [currentQuestion, setCurrentQuestion] = useState(null);
     const [userCode, setUserCode] = useState("");
     const [loading, setLoading] = useState(false);
     const [feedback, setFeedback] = useState(null);
+
+    useEffect(() => {
+        async function fetchQuestion() {
+            const res = await fetch();
+            const data = await res.json();
+            setCurrentQuestion(data);
+            setUserCode(data.starter_code || "")
+        }
+        fetchQuestion();
+    }, [subject, concept]);
 
     const handleSubmitCode = async () => {
         setLoading(true);
